@@ -8,5 +8,10 @@
         android:orderInCategory="100"
         android:title="@string/action_sort"
         app:showAsAction="always" />
+    <item
+        android:id="@+id/theme_switcher"
+        android:icon="@drawable/ic_theme"
+        android:title="@string/action_theme"
+        app:showAsAction="never"/>
 
 </menu>
