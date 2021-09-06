@@ -60,10 +60,10 @@ class DashboardFragment : Fragment() {
 
         layoutManager = LinearLayoutManager(activity)
 
-        val queue = Volley.newRequestQueue(activity as Context)
+        val queue = Volley.newRequestQueue(activity?:context as Context)
         val url = "http://13.235.250.119/v1/book/fetch_books/"
 
-        if (ConnectionManager().checkConnectivity(activity as Context)) {
+        if (ConnectionManager().checkConnectivity(activity?:context as Context)) {
 
             val jsonObjectRequest = object : JsonObjectRequest(
                 Method.GET,
@@ -88,7 +88,7 @@ class DashboardFragment : Fragment() {
                                 )
                                 bookInfoList.add(bookObject)
                                 recyclerAdapter =
-                                    DashboardRecyclerAdapter(activity as Context, bookInfoList)
+                                    DashboardRecyclerAdapter(activity?:context as Context, bookInfoList)
 
                                 recyclerDashboard.adapter = recyclerAdapter
 
