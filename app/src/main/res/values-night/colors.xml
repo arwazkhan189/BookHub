@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EE6C00</color>
+    <color name="colorPrimaryDark">#C23E10</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FFFFFFFF</color>
+    <color name="white">#FF000000</color>
+    <color name="yellow">#ffc828</color>
+    <color name="green">#36AF3B</color>
+    <color name="colorFavourites">#311b92</color>
+    <color name="book_background">#1C1717</color>
+</resources>

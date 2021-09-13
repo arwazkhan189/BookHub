@@ -33,6 +33,9 @@ class DashboardFragment : Fragment() {
     private lateinit var recyclerAdapter: DashboardRecyclerAdapter
     private lateinit var progressLayout: RelativeLayout
     private lateinit var progressBar: ProgressBar
+    private lateinit var mcontext: Context
+    private val sharedPref = activity?.getPreferences(Context.MODE_PRIVATE)
+
     val bookInfoList = arrayListOf<Book>()
     var ratingComparator = Comparator<Book> { book1, book2 ->
 
@@ -49,7 +52,7 @@ class DashboardFragment : Fragment() {
     ): View? {
         // Inflate the layout for this me.arwazkhan.bookhub.fragment
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
-
+        mcontext = requireContext()
         setHasOptionsMenu(true)
 
         recyclerDashboard = view.findViewById(R.id.recyclerDashboard)
@@ -59,11 +62,10 @@ class DashboardFragment : Fragment() {
         progressLayout.visibility = View.VISIBLE
 
         layoutManager = LinearLayoutManager(activity)
-
-        val queue = Volley.newRequestQueue(activity as Context)
+        val queue = Volley.newRequestQueue(mcontext)
         val url = "http://13.235.250.119/v1/book/fetch_books/"
 
-        if (ConnectionManager().checkConnectivity(activity as Context)) {
+        if (ConnectionManager().checkConnectivity(mcontext)) {
 
             val jsonObjectRequest = object : JsonObjectRequest(
                 Method.GET,
@@ -88,7 +90,7 @@ class DashboardFragment : Fragment() {
                                 )
                                 bookInfoList.add(bookObject)
                                 recyclerAdapter =
-                                    DashboardRecyclerAdapter(activity as Context, bookInfoList)
+                                    DashboardRecyclerAdapter(mcontext, bookInfoList)
 
                                 recyclerDashboard.adapter = recyclerAdapter
 
@@ -97,14 +99,14 @@ class DashboardFragment : Fragment() {
                             }
                         } else {
                             Toast.makeText(
-                                activity as Context,
+                                mcontext,
                                 "Some Error Occurred !!!",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
                     } catch (e: JSONException) {
                         Toast.makeText(
-                            activity as Context,
+                            mcontext,
                             "Some unexpected error occurred!!! ",
                             Toast.LENGTH_SHORT
                         ).show()
@@ -115,7 +117,7 @@ class DashboardFragment : Fragment() {
                     // Here we will handle the errors
                     if (activity != null) {
                         Toast.makeText(
-                            activity as Context,
+                            mcontext,
                             "Volley error occurred!!!",
                             Toast.LENGTH_SHORT
                         ).show()
@@ -152,6 +154,11 @@ class DashboardFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater?.inflate(R.menu.menu_dashboard, menu)
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mcontext = context
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

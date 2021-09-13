@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="140dp"
     android:layout_margin="6dp"
-    android:background="@color/white"
     android:orientation="horizontal"
     app:cardCornerRadius="4dp">
 
@@ -12,7 +11,6 @@
         android:id="@+id/llContent"
         android:layout_width="match_parent"
         android:layout_height="140dp"
-        android:background="@color/white"
         android:orientation="horizontal"
         android:weightSum="6">
 
@@ -27,11 +25,11 @@
         <ImageView
             android:id="@+id/imgBookImage"
             android:layout_width="0dp"
-            android:layout_height="110dp"
+            android:layout_height="match_parent"
             android:layout_weight="1.5"
             android:contentDescription="@string/image"
             android:padding="5dp"
-            android:scaleType="centerCrop"
+            android:scaleType="fitCenter"
             android:src="@mipmap/ic_launcher" />
 
         <RelativeLayout
@@ -75,20 +73,28 @@
         their right or left. This is added with the help of the
         drawableLeft (or drawableRight and so on) attribute-->
 
-        <TextView
-            android:id="@+id/txtBookRating"
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1.2"
-            android:drawablePadding="4dp"
-            android:padding="4dp"
-            android:text="@string/_4_5"
-            android:textColor="@color/yellow"
-            android:textSize="15sp"
-            android:textStyle="bold"
-            app:drawableLeftCompat="@drawable/ic_ratings">
-
-        </TextView>
+            android:orientation="vertical"
+            android:layout_weight="1.2">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_ratings"
+                android:contentDescription="@string/ratings_icon" />
+            <TextView
+                android:id="@+id/txtBookRating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:drawablePadding="4dp"
+                android:padding="4dp"
+                android:text="@string/_4_5"
+                android:textColor="@color/yellow"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
     </LinearLayout>
-</androidx.cardview.widget.CardView>
+</com.google.android.material.card.MaterialCardView>

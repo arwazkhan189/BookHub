@@ -25,4 +25,7 @@
     <string name="android_inc">Android Inc.</string>
     <string name="rs_499">Rs. 499</string>
     <string name="action_sort">Sort</string>
+    <string name="ratings_icon">ratings icon</string>
+    <string name="action_theme">Switch Theme</string>
+    <string name="themekey">theme</string>
 </resources>
