@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/Desktop/SplashScreen_BookHub/BookHub/app/src/main/res/drawable/gradient_bg.xml" value="0.2703125" />
+        <entry key="..\:/Users/HP/Desktop/SplashScreen_BookHub/BookHub/app/src/main/res/layout/activity_splash_screen.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/HP/Desktop/SplashScreen_BookHub/BookHub/app/src/main/res/layout/activity_splash_screen2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/BookHub/app/src/main/res/drawable-anydpi/ic_action_sort.xml" value="0.1" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/BookHub/app/src/main/res/drawable/ic_launcher_background.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/BookHub/app/src/main/res/layout/activity_description.xml" value="0.1" />
