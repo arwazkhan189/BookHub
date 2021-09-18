@@ -19,11 +19,17 @@
         tools:targetApi="n">
         <activity
             android:name=".activity.DescriptionActivity"
+            android:exported="true"
+            android:configChanges="orientation|screenSize"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".activity.MainActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:screenOrientation="fullSensor" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:screenOrientation="fullSensor">
