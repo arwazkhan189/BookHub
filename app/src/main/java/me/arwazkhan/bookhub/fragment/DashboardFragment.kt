@@ -130,7 +130,6 @@ class DashboardFragment : Fragment() {
                     return headers
                 }
             }
-
             queue.add(jsonObjectRequest)
 
         } else {

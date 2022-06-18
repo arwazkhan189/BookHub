@@ -34,7 +34,7 @@
 
                 <ImageView
                     android:id="@+id/imgBookImage"
-                    android:layout_width="0dp"
+                    android:layout_width="55dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
                     android:contentDescription="@string/image"
@@ -59,7 +59,7 @@
 
                     <TextView
                         android:id="@+id/txtBookAuthor"
-                        android:layout_width="match_parent"
+                        android:layout_width="185dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtBookName"
                         android:padding="8dp"
@@ -70,7 +70,7 @@
 
                     <TextView
                         android:id="@+id/txtBookPrice"
-                        android:layout_width="match_parent"
+                        android:layout_width="185dp"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/txtBookAuthor"
                         android:padding="8dp"
@@ -81,18 +81,29 @@
 
                 </RelativeLayout>
 
-                <TextView
-                    android:id="@+id/txtBookRating"
+
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1.2"
-                    android:drawablePadding="4dp"
-                    android:padding="4dp"
-                    android:text="@string/_4_5"
-                    android:textColor="@color/yellow"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:drawableStartCompat="@drawable/ic_ratings" />
+                    android:orientation="vertical"
+                    android:layout_weight="1.2">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_ratings"
+                        android:contentDescription="@string/ratings_icon" />
+                    <TextView
+                        android:id="@+id/txtBookRating"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:drawablePadding="4dp"
+                        android:padding="4dp"
+                        android:text="@string/_4_5"
+                        android:textColor="@color/yellow"
+                        android:textSize="15sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
 
             </LinearLayout>
 

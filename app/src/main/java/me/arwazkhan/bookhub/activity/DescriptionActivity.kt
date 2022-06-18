@@ -151,6 +151,7 @@ class DescriptionActivity : AppCompatActivity() {
                                             applicationContext,
                                             R.color.colorFavourites
                                         )
+                                        btnAddToFav.setBackgroundColor(favColor)
                                     } else {
                                         Toast.makeText(
                                             this@DescriptionActivity,

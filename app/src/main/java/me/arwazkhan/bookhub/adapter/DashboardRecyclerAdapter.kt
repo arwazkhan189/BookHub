@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import me.arwazkhan.bookhub.R
@@ -44,7 +45,7 @@ class DashboardRecyclerAdapter(
 
         Picasso.get().load(book.bookImage).error(R.drawable.default_book_cover)
             .into(holder.imgBookImage)
-        holder.llContent.setOnClickListener {
+        holder.itemView.setOnClickListener {
             val intent = Intent(context, DescriptionActivity::class.java)
             intent.putExtra("book_id", book.bookId)
             context.startActivity(intent)
